@@ -151,28 +151,7 @@ class Nim {
                 System.out.println("The computer has been selected to play first!");
             }
         }
-        // Output the initial amount of counters in each pile
-        // Use for loops to print the counters as asterisks (Fancy Display - Rows)
-        System.out.print("A: ");
-        for (int i = 0; i < pileA; i++) {
-            System.out.print("*");
-        }
-        // Skip to new line for the next character
-        System.out.println();
-
-        System.out.print("B: ");
-        for (int i = 0; i < pileB; i++) {
-            System.out.print("*");
-        }
-        // Skip to new line for the next character
-        System.out.println();
-
-        System.out.print("C: ");
-        for (int i = 0; i < pileC; i++) {
-            System.out.print("*");
-        }
-        // Skip to new line for the next character
-        System.out.println();
+        printPiles(pileA, pileB, pileC);
         
         // While loop - keeps the game running until the game is won
         while (gameWon == false) {
@@ -470,28 +449,7 @@ class Nim {
                 reader.nextLine();
             }
 
-            // Output the current amount of counters in each pile
-            System.out.print("A: ");
-            for (int i = 0; i < pileA; i++) {
-                System.out.print("*");
-            }
-            // Skip to new line for the next character
-            System.out.println();
-
-            System.out.print("B: ");
-            for (int i = 0; i < pileB; i++) {
-                System.out.print("*");
-            }
-            // Skip to new line for the next character
-            System.out.println();
-
-            System.out.print("C: ");
-            for (int i = 0; i < pileC; i++) {
-                System.out.print("*");
-            }
-
-            // Skip to new line for the next character
-            System.out.println();   
+            printPiles(pileA, pileB, pileC); 
             
             // If the sum is 0, then the current player has picked the last counters available. Hence, that player lost
             if (pileA + pileB + pileC == 0) {
@@ -535,5 +493,35 @@ class Nim {
             }
         }
         reader.close();
+    }
+
+    /*
+     * Description: Prints number of counters in each pile
+     * 
+     * @params a, b, c - The amount of counters in each pile
+     * */
+    public static void printPiles(int a, int b, int c) {
+        // Loop through each pile, printing asterisks for counters
+
+        System.out.print("A: ");
+            for (int i = 0; i < a; i++) {
+                System.out.print("*");
+            }
+            // Skip to new line for the next character
+            System.out.println();
+
+            System.out.print("B: ");
+            for (int i = 0; i < b; i++) {
+                System.out.print("*");
+            }
+            // Skip to new line for the next character
+            System.out.println();
+
+            System.out.print("C: ");
+            for (int i = 0; i < c; i++) {
+                System.out.print("*");
+            }
+            // Skip to new line for the next character
+            System.out.println();  
     }
 }
